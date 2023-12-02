@@ -1,0 +1,326 @@
+.site-header {
+
+	.navigation-container {
+		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		position: fixed;
+		bottom: 0;
+		background-color: black;
+		height: 60px;
+		z-index: 99999;
+		margin: 0;
+		
+		.home-icon,
+		.team-icon,
+		.cart-icon {
+			display: block;
+			width: 58px;
+			height: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			a {
+				display: flex;
+				align-items: center;
+				fill: white;
+
+				&:hover {
+					fill: #8A0000;
+				}
+			}
+		}
+
+		.main-navigation {
+
+			button {
+				background-color: black;
+				border: none;
+				max-width: fit-content;
+
+				svg {
+					fill: white;
+					height: 40px;
+					width: 30px;
+				}
+
+				&:hover > svg {
+					fill: #8A0000;
+				}
+			}
+
+			ul {
+				display: none;
+				list-style: none;
+				margin: 0;
+				padding-left: 0;
+				position: absolute;
+				top: -199px;
+				left: -50px;
+				background-color: black;
+				width: 150px;
+
+				.menu-item-113,
+				.menu-item-105 {
+					display: none;
+				}
+
+				.menu-item-264 {
+					display: block;
+				}
+
+				li {
+					position: relative;
+					padding: 2px 10px;
+
+					&:hover > a,
+					&.focus > a {
+						color: black;
+					}
+					
+					ul {
+						box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+						position: absolute;
+						top: -5px;
+						left: -999em;
+						z-index: 99999;
+						padding: 5px 0;
+						width: max-content;
+						
+						ul {
+							left: -999em;
+							top: 0;
+						}
+
+						li {
+
+							&:hover > ul,
+							&.focus > ul {
+								display: block;
+								left: auto;
+							}
+						}
+
+						a {
+							width: 200px;
+						}
+					}
+
+					a {
+						display: block;
+						text-decoration: none;
+						color: white;
+					}
+
+					&:hover {
+						background-color: white;
+					}
+
+					&:hover > ul,
+					&.focus > ul {
+						left: -200px;
+					}
+				}
+			}
+
+			.current_page_item > a,
+			.current-menu-item > a,
+			.current_page_ancestor > a,
+			.current-menu-ancestor > a {
+			}
+		}
+	}
+	.menu-header-menu-container {
+		position: relative;
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.navigation-container .main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.site-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+
+		.navigation-container {
+			height: 50px;
+			position: relative;
+			background-color: white;
+			font-size: 20px;
+
+			.home-icon,
+			.team-icon,
+			.cart-icon {
+				display: none;
+			}
+
+			.main-navigation {
+
+				ul {
+					display: flex;
+					position: relative;
+					top: 0;
+					background-color: white;
+					width: auto;
+					left: 0;
+
+					.menu-item-113,
+					.menu-item-105 {
+						display: block;
+					}
+
+					.menu-item-264 {
+						display: none;
+					}
+
+					li {
+						margin: 0 10px;
+						position: relative;
+						padding: 5px 0;
+
+						a {
+							display: block;
+							text-decoration: none;
+							color: black;
+							font-weight: 500;
+						}
+
+						& > a::before {
+							content: '';
+							height: 4px;
+							background: #8A0000;
+							display: inline-block;
+							position: absolute;
+							bottom: 0;
+							width: 0;
+							transition: width 0.3s;
+						}
+						
+						&:hover > a::before {
+							width: 100%;
+						}
+
+						&:hover > ul {
+							top: 40px;
+							left: 0;
+						}
+
+						&:hover > a {
+							color: #8A0000;
+						}
+
+						ul {
+							display: flex;
+							flex-direction: column;
+							position: absolute;
+							background-color: white;
+							width: 200px;
+							padding: 0;
+
+							li {
+								max-width: fit-content;
+								padding: 5px 0;;
+								margin: 0;
+
+								&:hover {
+									background-color: #8A0000;
+								}
+
+								&:hover > a {
+									color: white;
+									text-decoration: none;
+								}
+
+								a {
+									&::before {
+										background-color: transparent;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.menu-toggle {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.site-footer {
+	.menu-footer-menu-container {
+		ul {
+			display: flex;
+			position: relative;
+			
+			li {
+				margin: 0 10px;
+
+				a {
+					text-decoration: none;
+					color: black;
+					font-weight: 500;
+				}
+
+				& > a::before {
+					content: '';
+					height: 4px;
+					background: #8A0000;
+					display: inline-block;
+					position: absolute;
+					bottom: 0;
+					width: 0;
+					transition: width 0.3s;
+				}
+				
+				&:hover > a::before {
+					width: 28%;
+				}
+
+				&:nth-child(1)::after {
+					content: '|';
+					position: absolute;
+					left: calc(33% - 5px);
+				}
+
+				&:nth-child(2)::after {
+					content: '|';
+					position: absolute;
+					left: calc(66%);
+				}
+			}
+		}
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+	}
+
+	.nav-links {
+		display: flex;
+	}
+
+	.nav-previous {
+		flex: 1 0 50%;
+	}
+
+	.nav-next {
+		flex: 1 0 50%;
+	}
+}
+

@@ -1,0 +1,67 @@
+.site {
+	.site-header {
+		margin-top: 10px;
+	}
+
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+
+	.site-footer {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		padding-bottom: 70px;
+		align-items: center;
+
+		.map-location {
+			width: 100%;
+		}
+
+		.icon-contact {
+			margin: 15px 0px;
+			padding: 0 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.icon-contact-container {
+				display: flex;
+				flex-direction: column;
+
+				a {
+					display: flex;
+					align-items: center;
+					text-decoration: none;
+					color: black;
+	
+					&:hover > svg {
+						fill: #8A0000;
+					}
+
+					&:hover {
+						color: #8A0000;
+					}
+				}
+
+				a,
+				svg {
+					margin: 0 15px;
+				}
+			}
+
+		}
+	}
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.site {
+		.site-footer {
+			padding-bottom: 10px;
+		}
+	}
+}

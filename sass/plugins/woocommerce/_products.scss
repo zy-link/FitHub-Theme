@@ -1,0 +1,120 @@
+ul.products {
+	margin: 3rem 0 0;
+	padding: 0;
+
+	li.product {
+		list-style: none;
+		position: relative;
+		margin-bottom: 2em;
+
+		.button {
+			display: block;
+		}
+	}
+}
+
+.fithub-teampage article {
+	margin: 0 auto 3rem;
+	width: 17rem;
+}
+
+@media screen and (min-width: 32em) {
+
+	ul.products {
+
+		li.product {
+
+			@include column-width(3);
+			width: 13rem;
+			display: inline-block;
+			margin: 0 2.5rem;
+	
+			&.first {
+				clear: both;
+			}
+	
+			&.last {
+				margin-right: 0;
+			}
+		}
+	}
+
+	ul.products.columns-1 {
+
+		li.product {
+			float: none;
+			width: 100%;
+		}
+
+	}
+
+	@for $i from 2 through 6 {
+
+		ul.products.columns-#{$i} {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			max-width: 51rem;
+			margin: 3rem auto 0;
+
+			li.product {
+				width: 13rem;
+				margin: 0 auto 2rem;
+			}
+
+		}
+	}
+
+	.shop article a,
+	.fithub-team article,
+	.fithub-teampage article,
+	.services-menu article,
+	.products-menu article,
+	.blog-menu article{
+
+		@include column-width(3);
+		width: 17rem;
+		display: inline-block;
+		margin: 0 0.75rem;
+
+
+		&.first {
+			clear: both;
+		}
+
+		&.last {
+			margin-right: 0;
+		}
+	}
+
+	.fithub-teampage article {
+		width: 17rem;
+	}
+
+	.services-menu article,
+	.products-menu article,
+	.blog-menu article,
+	.fithub-teampage article,
+	.fithub-team article {
+		margin-bottom: 2rem;
+	}
+
+	.shop article a {
+		width: 30%;
+		margin: 0 0.75rem;
+	}
+
+	.fithub-team {
+		margin: 0;
+	}
+
+	.fithub-teampage {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+	}
+
+	.site-main section h2 {
+		margin-top: 3rem;
+	}
+}
